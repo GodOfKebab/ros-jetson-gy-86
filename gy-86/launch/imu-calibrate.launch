@@ -1,0 +1,20 @@
+<launch>
+    <!-- IMU calibration launch file -->
+
+    <rosparam command="load" file="$(find gy-86)/imu_calibration/yaml_files/imu_calibration.yaml" />
+
+    <node pkg="gy-86" type="imu_calibration_node.py" name="imu_calibration_node"  output="screen">
+        <param name="calibrate_gyr" value="false"/>
+        <param name="calibrate_acc" value="false"/>
+        <param name="calibrate_comp" value="true"/>
+
+        <param name="gyr_num_of_calibration_measurements"  type="int" value="2000"/>
+        <param name="acc_num_of_calibration_measurements"  type="int" value="1000"/>
+        <param name="comp_num_of_calibration_measurements" type="int" value="100000"/>
+
+        <param name="print_gyr_status" value="true"/>
+        <param name="print_acc_status" value="true"/>
+        <param name="print_comp_status" value="true"/>
+    </node>
+
+</launch>

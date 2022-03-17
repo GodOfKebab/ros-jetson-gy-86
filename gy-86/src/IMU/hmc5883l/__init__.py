@@ -1,0 +1,1 @@
+from HMC5883L import HMC5883L
